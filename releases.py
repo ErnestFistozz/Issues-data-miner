@@ -31,7 +31,7 @@ class ReleaseMiner(CommonAttributes):
             page_releases = [
                     {
                             "repository": f"{self.organisation}/{self.repository}",
-                            "name": release['state'],
+                            "name": release['name'],
                             "release_id": release['id'],
                             "tag_name": release['tag_name'],
                             "target_commitish": release['target_commitish'],

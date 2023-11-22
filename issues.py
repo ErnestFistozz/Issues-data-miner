@@ -19,7 +19,7 @@ class IssueMiner(CommonAttributes):
         directory = Utils.determine_directory()
         filename = '{}{}'.format(directory, "github_issues.csv")
         while True:
-            url = f"https://api.github.com/repos/{self.organisation}/{self.repository}/issues?per_page={self.per_page}&page={page}"
+            url = f"https://api.github.com/repos/{self.organisation}/{self.repository}/issues?per_page={self.per_page}&page={page}&state=all&direction=asc"
             response = requests.get(url)
             if response.status_code != 200:
                 if response.status_code in [403, 429]:

@@ -34,8 +34,7 @@ class CommentsMiner(CommonAttributes):
                     "comment_id": comment['id'],
                     "created_at": comment['created_at'],
                     "updated_at": comment['updated_at'],
-                    "comment_msg": "" if not comment['body'] else ",".join(
-                        [currentComment for currentComment in comment['body']])
+                    "comment_msg": comment['body']
                 }
                 for comment in json_data
             ]
