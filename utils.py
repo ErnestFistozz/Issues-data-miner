@@ -14,7 +14,8 @@ class Utils:
             case 'linux' | 'darwin':
                 cmd = "whoami"
                 result = subprocess.run(cmd, capture_output=True, shell=True, text=True, check=True).stdout
-                directory = rf'/home/{result}/studies/issues/'
+                data = result.replace('\n','')
+                directory = rf'/home/{data}/studies/issues/'
                 return directory
             case 'windows':
                 cmd = '$env:USERNAME'
