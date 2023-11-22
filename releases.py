@@ -36,9 +36,9 @@ class ReleaseMiner(CommonAttributes):
                             "tag_name": release['tag_name'],
                             "target_commitish": release['target_commitish'],
                             "created_at": release['created_at'],
-                            "updated_at": release['updated_at'],
-                            "draft": release['draft'],
-                            "prerelease": release['prerelease'],
+                            "updated_at": release['updated_at'] if 'updated_at' in release else '',
+                            "draft": release['draft'] if 'draft' in release else '',
+                            "prerelease": release['prerelease'] if 'prerelease' in release else '',
                     }
                     for release in json_data
                 ]
