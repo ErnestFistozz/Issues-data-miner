@@ -24,6 +24,7 @@ class IssueMiner(CommonAttributes):
             if response.status_code != 200:
                 if response.status_code in [403, 429]:
                     time.sleep(wait_time)
+                    response = requests.get(url)
                     continue
                 else:
                     break
