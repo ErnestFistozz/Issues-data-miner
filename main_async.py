@@ -7,7 +7,7 @@ FILE_HEADERS = ['repository', 'issue_id', 'issue_number', 'labels', 'status', 'c
                 'number_of_assignees']
 
 if __name__ == '__main__':
-    repositories = Utils.read_file('repositories.txt')
+    repositories = Utils.read_file('test_repo.txt')
     directory = Utils.determine_directory()
     filename = '{}{}'.format(directory, "github_issues_async.csv")
     for repository in repositories:
