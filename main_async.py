@@ -3,7 +3,7 @@ from utils import Utils
 import asyncio
 
 FILE_HEADERS = ['repository', 'issue_id', 'issue_number', 'labels', 'status', 'comments',
-                'created_at', 'updatdataclassesed_at', 'closed_at', 'issue_title', 'state_reason', 'assigned',
+                'created_at', 'updated_at', 'closed_at', 'issue_title', 'state_reason', 'assigned',
                 'number_of_assignees']
 
 if __name__ == '__main__':
