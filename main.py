@@ -3,6 +3,7 @@ from issues import IssueMiner
 from releases import ReleaseMiner
 from utils import Utils
 
+
 if __name__ == '__main__':
     repositories = Utils.read_file('repositories.txt')
     for repository in repositories:
