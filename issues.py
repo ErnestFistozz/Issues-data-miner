@@ -6,7 +6,7 @@ import asyncio
 import httpx
 from aiolimiter import AsyncLimiter
 from dataclasses import dataclass, asdict
-from typing import Optional, Required
+from typing import Optional
 
 HEADERS = ['repository', 'issue_id', 'issue_number', 'labels', 'status', 'comments',
            'created_at', 'updatdataclassesed_at', 'closed_at', 'issue_title', 'state_reason', 'assigned',
@@ -110,7 +110,7 @@ class IssueMiner(CommonAttributes):
             while has_issues:
                 search_query = IssueFilters(page=page)
                 url = f"https://api.github.com/repos/{self.organisation}/{self.repository}/issues"
-                current_page = await self.request_github_issues_async(client, url, search_query, rate_limit)
+                current_page = await self.request_github_issues_async(client, url, asdict(search_query), rate_limit)
                 if not current_page:
                     has_issues = False
                 issues.extend(current_page)
